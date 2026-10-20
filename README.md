@@ -7,6 +7,12 @@ AWS SPOK, known as an opinionated solution bundle, offers a robust technical sta
 
 ![Foundation Module v1](images/spok.png)
 
+## Architecture
+
+![Architecture of the SPOK fargate-cluster pattern: users reach a public ALB that forwards to the ecsdemo task on Fargate in private subnets of a VPC in us-east-1; a push to GitHub triggers CodePipeline and CodeBuild, which run security scans and tests, push the image to Amazon ECR and deploy to the ECS service; CloudWatch, Datadog, Amazon SNS and an Aqua Security sidecar cover telemetry, alerts and runtime protection; Terraform provisions everything.](images/spok-architecture.png)
+
+*Figure 1: the `fargate-cluster` pattern with its optional integrations. Dashed cards are turned off by default and enabled through feature flags in `terraform.tfvars`. The editable source is [images/spok-architecture.drawio](images/spok-architecture.drawio).*
+
 ## Getting started
 
 To make it easy for you to get started with SPOK(Serverless Platform Operator Kit), here's a list of next steps. We are going to provision ECS Cluster with AWS Fargate, serverless compute engine for containers.
